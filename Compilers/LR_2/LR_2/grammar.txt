@@ -1,0 +1,14 @@
+3
+S
+A
+B
+2
+a
+b
+5
+S -> AB
+A -> aA
+A -> e
+B -> bA
+B -> e
+S
