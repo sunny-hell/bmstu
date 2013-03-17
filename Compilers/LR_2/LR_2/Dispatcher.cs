@@ -31,5 +31,11 @@ namespace LR_2
             _grammar = gt.transformToNonnullableGrammar(_grammar);
         }
 
+        public void removeERules()
+        {
+            GrammarTransformer gt = new GrammarTransformer();
+            _grammar = gt.removeERules(_grammar);
+        }
+
     }
 }

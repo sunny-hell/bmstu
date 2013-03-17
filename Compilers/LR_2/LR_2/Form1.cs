@@ -48,6 +48,11 @@ namespace LR_2
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Грамматика Nonnullable");
             sb.Append(_dispatcher.printGrammar());
+            _dispatcher.removeERules();
+            sb.AppendLine("===========================");
+            //sb.AppendLine("После удаления нетерминалов, из которых выводятся только  пустые цепочки");
+            sb.AppendLine("Грамматика без е-правил");
+            sb.Append(_dispatcher.printGrammar());
             rtbOutput.Text = sb.ToString();
         }
         

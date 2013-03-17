@@ -58,6 +58,16 @@ namespace LR_2
             //findVanishingSymbols();
         }
 
+        public Grammar(Grammar g)
+        {
+            _nonterminals = new List<Nonterminal>(g.Nonterminals);
+            _terminals = new List<Terminal>(g.Terminals);
+            _rules = new List<Rule>(g.Rules);
+            _distinguishedSymbol = new Nonterminal(g.DistinguishedSymbol);
+            _vanishingSymbols = new List<Nonterminal>(g.VanishingSymbols);
+ 
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

@@ -5,3 +5,10 @@ D:\bmstu\Compilers\CC_lab#2\LR_2\LR_2\bin\Debug\LR_2.exe
 D:\bmstu\Compilers\CC_lab#2\LR_2\LR_2\bin\Debug\LR_2.pdb
 D:\bmstu\Compilers\CC_lab#2\LR_2\LR_2\obj\x86\Debug\LR_2.exe
 D:\bmstu\Compilers\CC_lab#2\LR_2\LR_2\obj\x86\Debug\LR_2.pdb
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\obj\x86\Debug\LR_2.exe
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\obj\x86\Debug\LR_2.pdb
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\obj\x86\Debug\LR_2.Form1.resources
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\obj\x86\Debug\LR_2.Properties.Resources.resources
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\obj\x86\Debug\LR_2.csproj.GenerateResource.Cache
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\bin\Debug\LR_2.exe
+D:\bmstu_repo\bmstu\Compilers\LR_2\LR_2\bin\Debug\LR_2.pdb
