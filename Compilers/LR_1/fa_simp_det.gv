@@ -1,0 +1,8 @@
+digraph G{
+rankdir = LR;
+0[style="filled",fillcolor="red"]
+1[style="filled",fillcolor="red"]
+2[style="filled",fillcolor="red"]
+0->1[label="a"];
+0->2[label="b"];
+}
