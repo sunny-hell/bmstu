@@ -1,0 +1,9 @@
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\LR_1.Form1.resources
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\LR_1.Properties.Resources.resources
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\bmstu\10 sem\compilers\LR_1\LR_1\bin\Debug\LR_1.exe
+E:\bmstu\10 sem\compilers\LR_1\LR_1\bin\Debug\LR_1.pdb
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\LR_1.exe
+E:\bmstu\10 sem\compilers\LR_1\LR_1\obj\x86\Debug\LR_1.pdb
