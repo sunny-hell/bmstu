@@ -1,0 +1,31 @@
+7
+S
+T
+A
+L
+C
+B
+D
+6
+a
+t
+f
+!
+&
+~
+14
+S -> A
+S -> AT
+T -> !A
+T -> !AT
+A -> C
+A -> CL
+L -> &C
+L -> &CL
+C -> B
+C -> ~B
+B -> D
+B -> a
+D -> t
+D -> f
+S
