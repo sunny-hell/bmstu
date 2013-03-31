@@ -1,0 +1,9 @@
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\bin\Debug\LR_3.exe
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\bin\Debug\LR_3.pdb
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\obj\x86\Debug\LR_3.Form1.resources
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\obj\x86\Debug\LR_3.Properties.Resources.resources
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\obj\x86\Debug\LR_3.csproj.GenerateResource.Cache
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\obj\x86\Debug\LR_3.exe
+D:\bmstu_repo\bmstu\Compilers\LR_3\LR_3\LR_3\obj\x86\Debug\LR_3.pdb
+D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.exe
+D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.pdb
