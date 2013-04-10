@@ -5,3 +5,5 @@ D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_4.Properties.Resou
 D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_4.csproj.GenerateResource.Cache
 D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.exe
 D:\bmstu_repo\bmstu\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.pdb
+E:\bmstu_repo\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.exe
+E:\bmstu_repo\Compilers\LR_4\LR_3\LR_3\obj\x86\Debug\LR_3.pdb
