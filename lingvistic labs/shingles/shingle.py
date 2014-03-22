@@ -19,7 +19,7 @@ stop_words = (
     u'он', u'она'
 )
 
-def canonize(text, verbose=False):
+def canonize(text):
     words = [y.strip(stop_symbols) for y in text.lower().split()]
     filtered = [x for x in words if x and (x not in stop_words)]
 
@@ -31,8 +31,8 @@ def get_hash(secret, line):
     s = h.hexdigest()
     return int(s, 16)         
 
-def gen_shingle(text, shingle_len=10, verbose=False):
-    source = canonize(text, verbose)
+def gen_shingle(text, shingle_len=10):
+    source = canonize(text)
     shingles = []
 
     for j in range(84):
@@ -41,10 +41,17 @@ def gen_shingle(text, shingle_len=10, verbose=False):
         for i in range(len(source) - (shingle_len - 1)):
             line = u' '.join([x for x in source[i:i + shingle_len]])
             hashs_j.append(get_hash(secret, line))
-        shingles.append(min(hashs_j))
+        shingles.append(min(hashs_j)) 
 
     return shingles
 
+def gen_super_shingle(text, shingle_len=10):
+    shingles = gen_shingle(text, shingle_len)
+    super_shingles = []
+    for i in range(0, len(shingles), 4):
+        ss_line = ' '.join([str(x) for x in shingles[i:i+4]])
+        super_shingles.append(binascii.crc32(ss_line))
+    return super_shingles            
 
 def compare(source1, source2):
     same = 0
@@ -67,12 +74,18 @@ if __name__ == '__main__':
     parser.add_argument('filename2')
     parser.add_argument('--len', help='shingle length', type=int, default=5,
                         action='store')
+    parser.add_argument('--alg', help='shingle algorithm (simple, super)', type=str, default='simple',
+                        action='store')
     args = parser.parse_args()
 
     text1 = read_file(args.filename1)
     text2 = read_file(args.filename2)
-
-    cmp1 = gen_shingle(text1, shingle_len=args.len)
-    cmp2 = gen_shingle(text2, shingle_len=args.len)
+    
+    if args.alg == 'simple':
+        cmp1 = gen_shingle(text1, shingle_len=args.len)
+        cmp2 = gen_shingle(text2, shingle_len=args.len)
+    elif args.alg == 'super':
+        cmp1 = gen_super_shingle(text1, shingle_len=args.len)
+        cmp2 = gen_super_shingle(text2, shingle_len=args.len)
 
     print 'resemblance is {}%'.format(compare(cmp1, cmp2))
