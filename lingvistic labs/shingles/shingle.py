@@ -45,22 +45,33 @@ def gen_shingle(text, shingle_len=10):
 
     return shingles
 
-def gen_super_shingle(text, shingle_len=10):
+def gen_super_shingle(text, shingle_len=10, sketch_len=4):
     shingles = gen_shingle(text, shingle_len)
     super_shingles = []
-    for i in range(0, len(shingles), 4):
-        ss_line = ' '.join([str(x) for x in shingles[i:i+4]])
+    for i in range(0, len(shingles), sketch_len):
+        ss_line = ' '.join([str(x) for x in shingles[i:i+sketch_len]])
         super_shingles.append(binascii.crc32(ss_line))
     return super_shingles            
+
+def gen_mega_shingle(text, shingle_len=10, sketch_len=4):
+    super_shingles =  gen_super_shingle(text, shingle_len, sketch_len)
+    mega_shingles = []
+    for x in super_shingles:
+        for y in super_shingles:
+            if x != y:
+                mega_line = ' '.join([str(x), str(y)])
+                mega_shingles.append(binascii.crc32(mega_line))
+    return mega_shingles
 
 def compare(source1, source2):
     same = 0
     for i in range(len(source1)):
         if source1[i] == source2[i]:
             same = same + 1
+    return same
 
-    return same / 84.0 * 100
-
+def compare_simple(source1, source2):
+    return compare(source1, source2) / 84.0 * 100
 
 def read_file(filename):
     with codecs.open(filename, encoding='utf-8') as fin:
@@ -74,7 +85,9 @@ if __name__ == '__main__':
     parser.add_argument('filename2')
     parser.add_argument('--len', help='shingle length', type=int, default=5,
                         action='store')
-    parser.add_argument('--alg', help='shingle algorithm (simple, super)', type=str, default='simple',
+    parser.add_argument('--alg', help='shingle algorithm (simple, super, mega)', type=str, default='simple',
+                        action='store')
+    parser.add_argument('--sketch', help='sketch length for super shingle', type=int, default=4,
                         action='store')
     args = parser.parse_args()
 
@@ -84,8 +97,12 @@ if __name__ == '__main__':
     if args.alg == 'simple':
         cmp1 = gen_shingle(text1, shingle_len=args.len)
         cmp2 = gen_shingle(text2, shingle_len=args.len)
+        print 'resemblance is {}%'.format(compare_simple(cmp1, cmp2))
     elif args.alg == 'super':
-        cmp1 = gen_super_shingle(text1, shingle_len=args.len)
-        cmp2 = gen_super_shingle(text2, shingle_len=args.len)
-
-    print 'resemblance is {}%'.format(compare(cmp1, cmp2))
+        cmp1 = gen_super_shingle(text1, shingle_len=args.len, sketch_len=args.sketch)
+        cmp2 = gen_super_shingle(text2, shingle_len=args.len, sketch_len=args.sketch)
+        print 'number of matched super shingles is {}'.format(compare(cmp1, cmp2))    
+    elif args.alg == 'mega':
+        cmp1 = gen_mega_shingle(text1, shingle_len=args.len, sketch_len=args.sketch)
+        cmp2 = gen_mega_shingle(text2, shingle_len=args.len, sketch_len=args.sketch)
+        print 'number of matched mega shingles is {}'.format(compare(cmp1, cmp2))  
