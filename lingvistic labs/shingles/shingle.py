@@ -41,8 +41,11 @@ def gen_shingle(text, shingle_len=10):
         for i in range(len(source) - (shingle_len - 1)):
             line = u' '.join([x for x in source[i:i + shingle_len]])
             hashs_j.append(get_hash(secret, line))
-        shingles.append(min(hashs_j)) 
-
+        min_hash = min(hashs_j)
+        print 'index of min hash is: ', hashs_j.index(min_hash)
+        shingles.append(min_hash)
+         
+         
     return shingles
 
 def gen_super_shingle(text, shingle_len=10, sketch_len=4):
